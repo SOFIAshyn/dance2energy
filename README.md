@@ -100,7 +100,10 @@ An example of the images of the dataset:
    cd ./src/data/
    python3 vectors_between_frames_visualisation.py   
    ```
-**TODO: add image of vectors transition example.**
+An example of the generated vector fields can be seen below:
+<p align="center">
+    <img src='/reports/figures/fields.jpeg' width="300">
+</p>
 
 * So far we were processing all the `ballet` files. For future GAN usage, 
 we will need only the files with one person on the frame. We manually have 
@@ -125,6 +128,11 @@ describes the flow from one frame to another.
 * In `./src/visualisation/sketch` directory is placed the script to generate 
 abstraction dataset for processed data with `p5.js`.
 
+An example of the generated abstraction visuals can be seen below:
+<p align="center">
+    <img src='/reports/figures/perlin.jpeg' width="300">
+</p>
+
 ## Step 4: Visualise data with p5.js
 1. Open `Processsing`. Set up `p5.js` with an editor on the computer. 
 2. Open `./src/visualisation/sketch` and run.
@@ -133,7 +141,10 @@ a list of directories of the names of each video.
 3. See the comparison of original frame and algorithmically generated 
 abstraction image running the cells in 
 `./notebooks/abstraction_original_comparison.ipynb`.\
-**TODO: add images origVSframe examples.**
+An example of the generated abstraction visuals can be seen below:
+<p align="center">
+    <img src='/reports/figures/orXab.jpeg' width="300">
+</p>
 
 ## Train or use pre-trained GAN models
 

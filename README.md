@@ -7,7 +7,7 @@ The final result of the project is translation of original dancing images into e
 
 
 <img src="https://github.com/SOFIAshyn/dance2energy/reports/figures/examples_of_pairs.jpeg" width="600"/>
-[![Cycle GAN performance][(https://github.com/SOFIAshyn/dance2energy/reports/figures/video1.jpeg)](https://youtu.be/ZpkNwWG8qWo)
+[![Cycle GAN performance][(https://img.youtube.com/vi/ZpkNwWG8qWo/0.jpg)](https://youtu.be/ZpkNwWG8qWo)
 
 
 - Linux or macOS

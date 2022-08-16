@@ -1,10 +1,12 @@
 # dance2energy
+## Dance energy style transfer using image-to-image translation networks
 Dance2Energy is a project that shows the usage of
 AlphaPose ML model and represents the idea of 
 Generative Art in two senses: algorithmical & intelectual.
 
 The final result of the project is translation of original dancing images into energy flow visuals:
 
+todo: make an image samaller
 
 ![This is an image](/reports/figures/examples_of_pairs.jpeg)
 [![Cycle GAN performance](https://img.youtube.com/vi/ZpkNwWG8qWo/0.jpg)](https://www.youtube.com/watch?v=ZpkNwWG8qWo)
@@ -13,8 +15,21 @@ The final result of the project is translation of original dancing images into e
 - Python 3
 - CPU or NVIDIA GPU + CUDA CuDNN
 
-## Getting Started
-### Installiation
+## Table of Contents
+  * [Installation](#installation)
+  * [Implementation from skratch](#implementations)
+    + [Data processing](#data)
+    + [Implementation from skratch](#skratch)
+      + [Step 1: Take a dataset with people dancing](#s1)
+      + [Step 2: Get the additional data about images with Pose Estimation Model](#s2)
+      + [Step 3: Generate abstractions dataset based on Pose Estimation data](#s3)
+      + [Step 4: Visualise data with p5.js](#s4)
+    + [Train or use pre-trained GAN models](#gans)
+      + [BiCycle GAN](#bicycle)
+      + [Cycle GAN](#cycle)
+    + [Run frame interpolation model](#film)
+
+# Installation
 - Clone the repository:
    ```bash
    git clone https://github.com/SOFIAshyn/dance2energy.git
@@ -24,11 +39,20 @@ The final result of the project is translation of original dancing images into e
   - For pip users, please type the command `pip install -r requirements.txt`.
   - For Conda users, you can create a new Conda environment using `conda env create -f environment.yml`.
 
-If you wish to [Docker](docs/docker.md)
+If you wish to try out the final result, you should follow [**these instructions**](src/models/pytorch-CycleGAN-and-pix2pix/README.md), if you want to generate the datasets and to try to train BiCycle GAN and Cycle GAN, please follow the instructions below.
 
-### Run the project from skratch
-#### Prepare data for visualisation
-1. For the pose estimation of your data, you can follow this notebook 
+# Run the project from skratch
+## Data processing
+**Steps:**
+  - Take a dataset with people dancing
+  - Get the additional data about images with Pose Estimation Model
+  - Generate abstractions dataset based on Pose Estimation data
+  - Visualise data with p5.js
+
+## Implementation from skratch
+
+### Step 1: Take a dataset with people dancing
+For the pose estimation of your data, you can follow this notebook 
 `alphapose_frames_processing.ipynb`.\
 You will get data in `.JSON` format about the keypoints of the bodies at the image.\
 \
@@ -40,7 +64,9 @@ Otherwise, you can work with dancing dataset:
 \
 Running these commands you will get: `./data/interim/json_files_each_video` directory.
 
-2. Tracking the same pose is done:
+### Step 2: Get the additional data about images with Pose Estimation Model
+
+* Tracking the same pose is done:
    - Run the command
    ```bash
      cd ./src/data/   
@@ -48,16 +74,16 @@ Running these commands you will get: `./data/interim/json_files_each_video` dire
    ```
    - You will get `./data/interim/df_pairs_each_video` directory as an output.
 
-3. To see flow of vectors from one frame to another, run script:
+* To see flow of vectors from one frame to another, run script:
    ```bash
    cd ./src/data/
    python3 vectors_between_frames_visualisation.py   
    ```
 **TODO: add image of vectors transition example.**
 
-4. So far we were processing all the `ballet `files. For future GAN usage, 
+* So far we were processing all the `ballet` files. For future GAN usage, 
 we will need only the files with one person on the frame. We manually have 
-chose the list of directories where only one person is shown. To filter the data, run the script:
+choose the list of directories where only one person is shown. To filter the data, run the script:
    ```bash
    cd ./src/data/
    python3 gan_ballet_image_selector.py
@@ -65,7 +91,9 @@ chose the list of directories where only one person is shown. To filter the data
    You will get data in the directory: `./data/interim/gan_frames`, where each `.JSON` 
 file belongs to its directory of the name of the video.
 
-5. For future dataset generation with `p5.js` the following data preparation step 
+## Step 3: Generate abstractions dataset based on Pose Estimation data
+
+* For future dataset generation with `p5.js` the following data preparation step 
 was done: `get_vectors_coordinates_for_p5_js.ipynb`.\
    - Run all the cells, as an output we are getting the following directory: 
 `./data/external/p5_df_probs_pairs_5` with `.JSON` file for each video. Each file
@@ -73,10 +101,10 @@ describes the flow from one frame to another.
    - Move all the `.JSON` files from this directory into: 
    `./src/visualisation/sketch/assets`.
    
-6. In `./src/visualisation/sketch` directory is placed the script to generate 
+* In `./src/visualisation/sketch` directory is placed the script to generate 
 abstraction dataset for processed data with `p5.js`.
 
-### Visualise data with p5.js
+## Step 4: Visualise data with p5.js
 1. Open `Processsing`. Set up `p5.js` with an editor on the computer. 
 2. Open `./src/visualisation/sketch` and run.
    After the run you will get `./data/processed/gan_abstractions` with 
@@ -86,9 +114,16 @@ abstraction image running the cells in
 `./notebooks/abstraction_original_comparison.ipynb`.\
 **TODO: add images origVSframe examples.**
 
-### Prepare data for GANs training
+## Train or use pre-trained GAN models
 
+### BiCycle GAN
+The idea is to teach BiCycle GAN to generate abstractions without all the steps above needed. For the instructions, follow [**this link**](src/models/PyTorch-GAN/README.md).
 
+### Cycle GAN
+The idea is to teach Cycle GAN to generate abstractions without all the steps above needed. For the instructions, follow [**this link**](src/models/pytorch-CycleGAN-and-pix2pix/README.md).
+
+## Run frame interpolation model
+For the instructions, please follow [**this link**](src/models/frame-interpolation4large-motion/README.md).
 
 
 

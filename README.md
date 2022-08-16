@@ -2,13 +2,26 @@
 ## Dance energy style transfer using image-to-image translation networks
 Dance2Energy is a project that shows the usage of
 AlphaPose ML model and represents the idea of 
-Generative Art in two senses: algorithmical & intelectual.
+Generative Art in two senses: algorithmic & intellectual.
 
-The final result of the project is translation of original dancing images into energy flow visuals:
+**The concept:**
+* Algorithmic Generative Art - generation of the dataset based on the
+image data, functional calculations, and usage of Perlin noise.
+* Intellectual Generative Art - generation of the images based only on the 
+paired data input given to the GAN.
 
-todo: make an image samaller
+**Result:**
 
-![This is an image](/reports/figures/examples_of_pairs.jpeg)
+The final result of the project is the image translation of 
+original images of dancers into energy flow visuals:
+
+todo: make an image smaller
+
+<img src='https://drive.google.com/file/d/1jYeccUJOkOubjY8jjOyVyQKKqlm-4NP4/view?usp=sharing' width="300">
+
+[//]: # (![This is an image]&#40;/reports/figures/examples_of_pairs.jpeg&#41;)
+
+**Press on the image to follow the demo video in YouTube:**
 [![Cycle GAN performance](https://img.youtube.com/vi/ZpkNwWG8qWo/0.jpg)](https://www.youtube.com/watch?v=ZpkNwWG8qWo)
 
 - Linux or macOS
@@ -17,7 +30,7 @@ todo: make an image samaller
 
 ## Table of Contents
   * [Installation](#installation)
-  * [Implementation from skratch](#implementations)
+  * [Implementation from scratch]()
     + [Data processing](#data)
     + [Implementation from skratch](#skratch)
       + [Step 1: Take a dataset with people dancing](#s1)

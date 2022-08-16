@@ -3,12 +3,29 @@ Dance2Energy is a project that shows the usage of
 AlphaPose ML model and represents the idea of 
 Generative Art in two senses: algorithmical & intelectual.
 
-## Install and run
-### Prepare data for visualisation
-First, clone and download this repository.\
-Next, make sure you are in project folder. 
+The final result of the project is translation of original dancing images into energy flow visuals:
 
-1. If you want to try out the pose estimation on your data, you can follow this notebook 
+TODO: insert image of translation from original image into enrgy flow 
+- Linux or macOS
+- Python 3
+- CPU or NVIDIA GPU + CUDA CuDNN
+
+## Getting Started
+### Installiation
+- Clone the repository:
+   ```bash
+   git clone https://github.com/SOFIAshyn/dance2energy.git
+   cd dance2energy
+   ```
+- Install [PyTorch](http://pytorch.org) and 0.4+ and other dependencies (e.g., torchvision, [visdom](https://github.com/facebookresearch/visdom) and [dominate](https://github.com/Knio/dominate)).
+  - For pip users, please type the command `pip install -r requirements.txt`.
+  - For Conda users, you can create a new Conda environment using `conda env create -f environment.yml`.
+
+If you wish to [Docker](docs/docker.md)
+
+### Run the project from skratch
+#### Prepare data for visualisation
+1. For the pose estimation of your data, you can follow this notebook 
 `alphapose_frames_processing.ipynb`.\
 You will get data in `.JSON` format about the keypoints of the bodies at the image.\
 \

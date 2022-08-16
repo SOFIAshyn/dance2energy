@@ -130,7 +130,7 @@ abstraction dataset for processed data with `p5.js`.
 
 An example of the generated abstraction visuals can be seen below:
 <p align="center">
-    <img src='/reports/figures/perlin.jpeg' width="300">
+    <img src='/reports/figures/perlin.jpeg' width="700">
 </p>
 
 ## Step 4: Visualise data with p5.js
@@ -143,7 +143,7 @@ abstraction image running the cells in
 `./notebooks/abstraction_original_comparison.ipynb`.\
 An example of the generated abstraction visuals can be seen below:
 <p align="center">
-    <img src='/reports/figures/orXab.jpeg' width="300">
+    <img src='/reports/figures/orXab.jpeg' width="700">
 </p>
 
 ## Train or use pre-trained GAN models

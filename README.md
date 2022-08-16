@@ -5,7 +5,9 @@ Generative Art in two senses: algorithmical & intelectual.
 
 The final result of the project is translation of original dancing images into energy flow visuals:
 
-TODO: insert image of translation from original image into enrgy flow 
+
+<img src="https://junyanz.github.io/CycleGAN/reports/figures/examples_of_pairs.jpeg" width="600"/>
+[![Cycle GAN performance](https://youtu.be/ZpkNwWG8qWo)
 - Linux or macOS
 - Python 3
 - CPU or NVIDIA GPU + CUDA CuDNN

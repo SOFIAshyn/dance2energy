@@ -6,8 +6,7 @@ Generative Art in two senses: algorithmical & intelectual.
 The final result of the project is translation of original dancing images into energy flow visuals:
 
 
-<img src="='https://SOFIAshyn.github.io/dance2energy/reports/figures/examples_of_pairs.jpeg" width="600"/>
-
+![This is an image](/reports/figures/examples_of_pairs.jpeg)
 [![Cycle GAN performance](https://img.youtube.com/vi/ZpkNwWG8qWo/0.jpg)](https://www.youtube.com/watch?v=ZpkNwWG8qWo)
 
 - Linux or macOS

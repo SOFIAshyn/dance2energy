@@ -17,9 +17,9 @@ original images of dancers into energy flow visuals:
 
 todo: make an image smaller
 
-<img src='/reports/figures/examples_of_pairs.jpeg' width="300">
-
-[//]: # (![This is an image]&#40;/reports/figures/examples_of_pairs.jpeg | width=100&#41;)
+<p align="center">
+    <img src='/reports/figures/examples_of_pairs.jpeg' width="300">
+</p>
 
 **Press on the image to follow the demo video in YouTube:**
 [![Cycle GAN performance](https://img.youtube.com/vi/ZpkNwWG8qWo/0.jpg)](https://www.youtube.com/watch?v=ZpkNwWG8qWo)

@@ -19,7 +19,7 @@ todo: make an image smaller
 
 [//]: # (<img src='https://drive.google.com/file/d/1jYeccUJOkOubjY8jjOyVyQKKqlm-4NP4/view?usp=sharing' width="300">)
 
-![This is an image](/reports/figures/examples_of_pairs.jpeg){:width="36px"}
+![This is an image](/reports/figures/examples_of_pairs.jpeg){:height="36px"}
 
 **Press on the image to follow the demo video in YouTube:**
 [![Cycle GAN performance](https://img.youtube.com/vi/ZpkNwWG8qWo/0.jpg)](https://www.youtube.com/watch?v=ZpkNwWG8qWo)

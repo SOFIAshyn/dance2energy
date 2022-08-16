@@ -102,7 +102,7 @@ An example of the images of the dataset:
    ```
 An example of the generated vector fields can be seen below:
 <p align="center">
-    <img src='/reports/figures/fields.jpeg' width="300">
+    <img src='/reports/figures/fields.jpeg' width="700">
 </p>
 
 * So far we were processing all the `ballet` files. For future GAN usage, 

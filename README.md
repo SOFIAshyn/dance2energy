@@ -13,13 +13,16 @@ paired data input given to the GAN.
 **Result:**
 
 The final result of the project is the image translation of 
-original images of dancers into energy flow visuals:
-
-todo: make an image smaller
+original images of dancers into energy flow visuals. On the image below
+shown the results of the Algorithmic Generative Art. How one original image is 
+translated into abstract image.
 
 <p align="center">
     <img src='/reports/figures/examples_of_pairs.jpeg' width="300">
 </p>
+
+In the video below shown the result of Intellectual Generative Art 
+generation with Cycle GAN image-to-image translation.
 
 **Press on the image to follow the demo video in YouTube:**
 [![Cycle GAN performance](https://img.youtube.com/vi/ZpkNwWG8qWo/0.jpg)](https://www.youtube.com/watch?v=ZpkNwWG8qWo)
@@ -30,7 +33,7 @@ todo: make an image smaller
 
 ## Table of Contents
   * [Installation](#installation)
-  * [Implementation from scratch]()
+  * [Implementation from scratch](#Implementation%20from%20scratch)
     + [Data processing](#data)
     + [Implementation from skratch](#skratch)
       + [Step 1: Take a dataset with people dancing](#s1)

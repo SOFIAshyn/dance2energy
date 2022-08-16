@@ -35,7 +35,7 @@ generation with Cycle GAN image-to-image translation.
   * [Installation](#installation)
   * [Implementation from scratch](#run-the-project-from-skratch)
     + [Data processing](#data-processing)
-    + [Implementation from scratch](#Implementation-from-scratch)
+    + [Implementation from scratch](#implementation-from-scratch)
       + [Step 1: Take a dataset with people dancing](#step-1-take-a-dataset-with-people-dancing)
       + [Step 2: Get the additional data about images with Pose Estimation Model](#step-2-get-the-additional-data-about-images-with-pose-estimation-model)
       + [Step 3: Generate abstractions dataset based on Pose Estimation data](#step-3-generate-abstractions-dataset-based-on-pose-estimation-data)
@@ -65,7 +65,7 @@ If you wish to try out the final result, you should follow [**these instructions
   - Generate abstractions dataset based on Pose Estimation data
   - Visualise data with p5.js
 
-## Implementation from skratch
+## Implementation from scratch
 
 ### Step 1: Take a dataset with people dancing
 For the pose estimation of your data, you can follow this notebook 
@@ -79,6 +79,11 @@ Otherwise, you can work with dancing dataset:
 
 \
 Running these commands you will get: `./data/interim/json_files_each_video` directory.
+
+An example of the images of the dataset:
+<p align="center">
+    <img src='/reports/figures/lets_dance.jpeg' width="300">
+</p>
 
 ### Step 2: Get the additional data about images with Pose Estimation Model
 
@@ -141,7 +146,16 @@ The idea is to teach Cycle GAN to generate abstractions without all the steps ab
 ## Run frame interpolation model
 For the instructions, please follow [**this link**](src/models/frame-interpolation4large-motion/README.md).
 
-
+### Citation
+```bash
+@InProceedings{
+ CastroDance2017,
+ author = {Daniel Castro, Steven Hickson, Patsorn Sangkloy, Bhavishya Mittal, Sean Dai, James Hays and Irfan Essa},
+ title = {Let's Dance: Learning From Online Dance Videos},
+ booktitle = {eprint arXiv:2139179},
+ year = {2018},
+}
+```
 
 
 

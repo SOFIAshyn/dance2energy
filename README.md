@@ -33,17 +33,17 @@ generation with Cycle GAN image-to-image translation.
 
 ## Table of Contents
   * [Installation](#installation)
-  * [Implementation from scratch](#Implementation%20from%20scratch)
-    + [Data processing](#data)
-    + [Implementation from skratch](#skratch)
-      + [Step 1: Take a dataset with people dancing](#s1)
-      + [Step 2: Get the additional data about images with Pose Estimation Model](#s2)
-      + [Step 3: Generate abstractions dataset based on Pose Estimation data](#s3)
-      + [Step 4: Visualise data with p5.js](#s4)
-    + [Train or use pre-trained GAN models](#gans)
-      + [BiCycle GAN](#bicycle)
-      + [Cycle GAN](#cycle)
-    + [Run frame interpolation model](#film)
+  * [Implementation from scratch](#run-the-project-from-skratch)
+    + [Data processing](#data-processing)
+    + [Implementation from scratch](#Implementation-from-scratch)
+      + [Step 1: Take a dataset with people dancing](#step-1-take-a-dataset-with-people-dancing)
+      + [Step 2: Get the additional data about images with Pose Estimation Model](#step-2-get-the-additional-data-about-images-with-pose-estimation-model)
+      + [Step 3: Generate abstractions dataset based on Pose Estimation data](#step-3-generate-abstractions-dataset-based-on-pose-estimation-data)
+      + [Step 4: Visualise data with p5.js](#step-4-visualise-data-with-p5js)
+    + [Train or use pre-trained GAN models](#train-or-use-pre-trained-gan-models)
+      + [BiCycle GAN](#bicycle-gan)
+      + [Cycle GAN](#cycle-gan)
+    + [Run frame interpolation model](#run-frame-interpolation-model)
 
 # Installation
 - Clone the repository:

@@ -20,6 +20,7 @@ python3 -m frame_interpolation.eval.interpolator_cli --pattern "<path to the dir
 ```
 
 As a result we got this video (click on the image):
+
 [![Cycle GAN performance](https://img.youtube.com/vi/ZpkNwWG8qWo/0.jpg)](https://www.youtube.com/watch?v=ZpkNwWG8qWo)
 
 

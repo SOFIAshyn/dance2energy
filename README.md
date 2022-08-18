@@ -1,5 +1,11 @@
 # dance2energy
 ## Dance energy style transfer using image-to-image translation networks
+**Authors:**
+Idea & development: [Sofiia Petryshyn](https://github.com/SOFIAshyn). 
+Supervisors: 
+[Lyubomyr Senyuk]() and 
+[Roman Vey]().
+
 Dance2Energy is a project that shows the usage of
 AlphaPose ML model and represents the idea of 
 Generative Art in two senses: algorithmic & intellectual.
@@ -27,6 +33,7 @@ generation with Cycle GAN image-to-image translation.
 **Press on the image to follow the demo video in YouTube:**
 [![Cycle GAN performance](https://img.youtube.com/vi/ZpkNwWG8qWo/0.jpg)](https://www.youtube.com/watch?v=ZpkNwWG8qWo)
 
+## Prerequisites
 - Linux or macOS
 - Python 3
 - CPU or NVIDIA GPU + CUDA CuDNN
@@ -40,10 +47,15 @@ generation with Cycle GAN image-to-image translation.
       + [Step 2: Get the additional data about images with Pose Estimation Model](#step-2-get-the-additional-data-about-images-with-pose-estimation-model)
       + [Step 3: Generate abstractions dataset based on Pose Estimation data](#step-3-generate-abstractions-dataset-based-on-pose-estimation-data)
       + [Step 4: Visualise data with p5.js](#step-4-visualise-data-with-p5js)
-    + [Train or use pre-trained GAN models](#train-or-use-pre-trained-gan-models)
-      + [BiCycle GAN](#bicycle-gan)
-      + [Cycle GAN](#cycle-gan)
-    + [Run frame interpolation model](#run-frame-interpolation-model)
+  + [Train or use pre-trained GAN models](#train-or-use-pre-trained-gan-models)
+    + [BiCycle GAN](#bicycle-gan)
+      + [Original frame 2 Energy flow](#original-frame-2-energy-flow)
+      + [Frame skeleton 2 Energy flow](#frame-skeleton-2-energy-flow)
+    + [Cycle GAN](#cycle-gan)
+  + [Run a frame interpolation model](#run-a-frame-interpolation-model)
+  + [Results summary](#results-summary)
+  + [Future work](#future-work)
+  + [Citation](#citation)
 
 # Installation
 - Clone the repository:
@@ -146,18 +158,53 @@ An example of the generated abstraction visuals can be seen below:
     <img src='/reports/figures/orXab.jpeg' width="700">
 </p>
 
-## Train or use pre-trained GAN models
+# Train or use pre-trained GAN models
 
-### BiCycle GAN
+## BiCycle GAN
 The idea is to teach BiCycle GAN to generate abstractions without all the steps above needed. For the instructions, follow [**this link**](src/models/PyTorch-GAN/README.md).
+### Original frame 2 Energy flow
+Experiments with set up: 
+* Size = 128x128, latentdim = 256, batchsize = 8, numepochs = 200
+    <p align="center">
+        <img src="../../../reports/figures/128-biCycle.jpeg" width="500"\>
+    </p>
+* Size = 256x256, latent dim = 1024, batch size = 8, num epochs = 200
+    <p align="center">
+        <img src="../../../reports/figures/256-biCycle.jpeg" width="500"\>
+    </p>
 
-### Cycle GAN
+### Frame skeleton 2 Energy flow
+Experiments with set up: 
+* Size = 128x128, latentdim = 256, batchsize = 8, numepochs = 200
+    <p align="center">
+        <img src="../../../reports/figures/128-skeleton-biCycle.jpeg" width="500"\>
+    </p>
+* Size = 256x256, latent dim = 1024, batch size = 8, num epochs = 600
+    <p align="center">
+        <img src="../../../reports/figures/256-skeleton-biCycle.jpeg" width="500"\>
+    </p>
+
+## Cycle GAN
 The idea is to teach Cycle GAN to generate abstractions without all the steps above needed. For the instructions, follow [**this link**](src/models/pytorch-CycleGAN-and-pix2pix/README.md).
+<p align="center">
+    <img src="../../../reports/figures/cycle.png" width="600"\>
+</p>
 
-## Run frame interpolation model
+# Run a frame interpolation model
 For the instructions, please follow [**this link**](src/models/frame-interpolation4large-motion/README.md).
+Here you can see the video of the abstractions generated with Cycle GAN, and marged together with FILM interpolation technique (click on the image):
 
-### Citation
+[![Cycle GAN performance](https://img.youtube.com/vi/ZpkNwWG8qWo/0.jpg)](https://www.youtube.com/watch?v=ZpkNwWG8qWo)
+
+# Results summary
+According to the analysis of the work done, we investigated the Image-to-Image translation problem on images of real life and abstract generated images. We have noticed that if we take a pair of complex images as an input, we need more epochs for a model to learn the patterns of the desired outputs. If the size of images is 256, the pattern of energy flow is learned much better for complex ’dance2energy’ and easier ’danceSkeleton2energy’. The other side of Image-to-Image translation models is the mode collapse problem; BiCycle GAN aims to avoid this problem with the offered architecture. However, what we have noticed is that the network is prone to have a mode collapse, only working in smaller latent space; with the smaller size of image inputs, the model performs better results.
+
+# Future work
+To improve results, we need to make changes in architecture; another loss or dis- criminator type doesn’t make a real change. Further steps to explore:
+* work with larger datasets 
+* try to use larger sizes of images to feed BiCycle GAN and avoid mode collapse • progress with project to be able to generate the visuals in live.
+
+# Citation
 ```bash
 @InProceedings{
  CastroDance2017,

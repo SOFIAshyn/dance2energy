@@ -17,8 +17,8 @@
     + [Experiments](#experiments)
       + [Original frame 2 Energy flow](#original-frame-2-energy-flow)
       + [Frame skeleton 2 Energy flow](#frame-skeleton-2-energy-flow)
-    + [Results summary](#results-summary)
-    + [Citation](#citation)
+  + [Results summary](#results-summary)
+  + [Citation](#citation)
 
 ## Virtual environment setup
 ```bash
@@ -136,7 +136,7 @@ Experiments with set up:
         <img src="../../../reports/figures/256-skeleton-biCycle.jpeg" width="500"\>
     </p>
   
-### Results summary
+## Results summary
 According to the analysis of the work done, we investigated the Image-to-Image translation problem on images of real life and abstract generated images. We have noticed that if we take a pair of complex images as an input, we need more epochs for a model to learn the patterns of the desired outputs. If the size of images is 256, the pattern of energy flow is learned much better for complex ’dance2energy’ and easier ’danceSkeleton2energy’. The other side of Image-to-Image translation models is the mode collapse problem; BiCycle GAN aims to avoid this problem with the offered architecture. However, what we have noticed is that the network is prone to have a mode collapse, only working in smaller latent space; with the smaller size of image inputs, the model performs better results.
 
 ## Citation

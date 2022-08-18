@@ -24,7 +24,7 @@ shown the results of the Algorithmic Generative Art. How one original image is
 translated into abstract image.
 
 <p align="center">
-    <img src='/reports/figures/examples_of_pairs.jpeg' width="300">
+    <img src='./reports/figures/examples_of_pairs.jpeg' width="300">
 </p>
 
 In the video below shown the result of Intellectual Generative Art 
@@ -105,7 +105,7 @@ Running these commands you will get: `./data/interim/json_files_each_video` dire
 
 An example of the images of the dataset:
 <p align="center">
-    <img src='/reports/figures/lets_dance.jpeg' width="300">
+    <img src='./reports/figures/lets_dance.jpeg' width="300">
 </p>
 
 ### Step 2: Get the additional data about images with Pose Estimation Model
@@ -125,7 +125,7 @@ An example of the images of the dataset:
    ```
 An example of the generated vector fields can be seen below:
 <p align="center">
-    <img src='/reports/figures/fields.jpeg' width="700">
+    <img src='./reports/figures/fields.jpeg' width="700">
 </p>
 
 * So far we were processing all the `ballet` files. For future GAN usage, 
@@ -153,7 +153,7 @@ abstraction dataset for processed data with `p5.js`.
 
 An example of the generated abstraction visuals can be seen below:
 <p align="center">
-    <img src='/reports/figures/perlin.jpeg' width="700">
+    <img src='./reports/figures/perlin.jpeg' width="700">
 </p>
 
 ## Step 4: Visualise data with p5.js
@@ -166,7 +166,7 @@ abstraction image running the cells in
 `./notebooks/abstraction_original_comparison.ipynb`.\
 An example of the generated abstraction visuals can be seen below:
 <p align="center">
-    <img src='/reports/figures/orXab.jpeg' width="700">
+    <img src='./reports/figures/orXab.jpeg' width="700">
 </p>
 
 # Train or use pre-trained GAN models
@@ -177,28 +177,28 @@ The idea is to teach BiCycle GAN to generate abstractions without all the steps 
 Experiments with set up: 
 * Size = 128x128, latentdim = 256, batchsize = 8, numepochs = 200
     <p align="center">
-        <img src="../../../reports/figures/128-biCycle.jpeg" width="500"\>
+        <img src="./reports/figures/128-biCycle.jpeg" width="500"\>
     </p>
 * Size = 256x256, latent dim = 1024, batch size = 8, num epochs = 200
     <p align="center">
-        <img src="../../../reports/figures/256-biCycle.jpeg" width="500"\>
+        <img src="./reports/figures/256-biCycle.jpeg" width="500"\>
     </p>
 
 ### Frame skeleton 2 Energy flow
 Experiments with set up: 
 * Size = 128x128, latentdim = 256, batchsize = 8, numepochs = 200
     <p align="center">
-        <img src="../../../reports/figures/128-skeleton-biCycle.jpeg" width="500"\>
+        <img src="./reports/figures/128-skeleton-biCycle.jpeg" width="500"\>
     </p>
 * Size = 256x256, latent dim = 1024, batch size = 8, num epochs = 600
     <p align="center">
-        <img src="../../../reports/figures/256-skeleton-biCycle.jpeg" width="500"\>
+        <img src="./reports/figures/256-skeleton-biCycle.jpeg" width="500"\>
     </p>
 
 ## Cycle GAN
 The idea is to teach Cycle GAN to generate abstractions without all the steps above needed. For the instructions, follow [**this link**](src/models/pytorch-CycleGAN-and-pix2pix/README.md).
 <p align="center">
-    <img src="../../../reports/figures/cycle.png" width="600"\>
+    <img src="./reports/figures/cycle.png" width="600"\>
 </p>
 
 # Run a frame interpolation model

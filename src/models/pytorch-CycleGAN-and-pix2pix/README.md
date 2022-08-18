@@ -144,6 +144,18 @@ After the run, you will see the results in
 directory.
 
 ### Experiments
+All the experiments were run on the images dataset, that was cut into squeres.
+The main idea was to cut images into squeres in order to use general access Cycle GAN model.
+It was done in order to check how can be machine tought how to generate `itself perviously generated` abstractions.
+Size of the images that were given to training is 128px. On all the images the person was in the middle of the frame.
+<p align="center">
+    <img src="../../../reports/figures/cycle.png" width="600"\>
+</p>
+Here you can see the video of the abstractions generated with Cycle GAN, and marged together with FILM interpolation technique (click on the image):
+
+[![Cycle GAN performance](https://img.youtube.com/vi/ZpkNwWG8qWo/0.jpg)](https://www.youtube.com/watch?v=ZpkNwWG8qWo)
+
+
 
 ## Results summary
 According to the analysis of the work done, we investigated the Image-to-Image translation problem on images of real life and abstract generated images. We have noticed that if we take a pair of complex images as an input, we need more epochs for a model to learn the patterns of the desired outputs. If the size of images is 256, the pattern of energy flow is learned much better for complex ’dance2energy’ and easier ’danceSkeleton2energy’. The other side of Image-to-Image translation models is the mode collapse problem; BiCycle GAN aims to avoid this problem with the offered architecture. However, what we have noticed is that the network is prone to have a mode collapse, only working in smaller latent space; with the smaller size of image inputs, the model performs better results.

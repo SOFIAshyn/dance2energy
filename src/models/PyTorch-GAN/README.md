@@ -2,8 +2,6 @@
 
 <b>A PyTorch implementation:</b> [PyTorch-GANs](https://github.com/eriklindernoren/PyTorch-GAN)
 
-<b>See also:</b> [Keras-GAN](https://github.com/eriklindernoren/Keras-GAN)
-
 ## Table of Contents
   * [Virtual environment setup](#virtual-environment-setup)
   + [BicycleGAN](#bicyclegan)

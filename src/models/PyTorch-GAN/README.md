@@ -5,51 +5,129 @@ A PyTorch implementation of Generative Adversarial Network: BiCycleGAN.
 <b>See also:</b> [Keras-GAN](https://github.com/eriklindernoren/Keras-GAN)
 
 ## Table of Contents
-  * [Installation](#installation)
-  * [Implementations](#implementations)
-    + [BicycleGAN](#bicyclegan)
+  * [Virtual environment setup](#virtual-environment-setup)
+  + [BicycleGAN](#bicyclegan)
+    + [Abstract](#abstract)
+      + [Conditional Variational Autoencoder GAN: cVAE-GAN](#conditional-variational-autoencoder-gan-cvae-gan)
+      + [Conditional Latent Regressor GAN: cLR-GAN](#conditional-latent-regressor-gan-clr-gan)
+      + [Hybrid Model: BicycleGAN](#hybrid-model-bicyclegan)
+    + [Links](#links)
+    + [Authors](#authors)
+  + [Run Example](#run-example)
+    + [Download the data and train a model](#download-the-data-and-train-a-model)
+    + [Results](#results)
+    + [Experiments](#experiments)
+      + [Original frame 2 Energy flow](#original-frame-2-energy-flow)
+      + [Frame skeleton 2 Energy flow](#frame-skeleton-2-energy-flow)
 
-### Installation
-    $ cd ./src/PyTorch-GAN/
-    $ sudo pip3 install -r requirements.txt
+## Virtual environment setup
+    ```bash
+    cd ./src/PyTorch-GAN/
+    pip3 install -r requirements.txt
+    ```
 
-## Implementations   
-### BicycleGAN
-_Toward Multimodal Image-to-Image Translation_
+## BicycleGAN
+### Abstract
+As usually, GANs train a generator G and discriminator D by formulating their ob- jective as an adversarial game. The generator tries to fool the discriminator with real and fake (generated) images, whereas the discriminator tries to make a proper guess about the input. By objective function the convergence criterion is defined. GANs objective function is written in the way, so discriminator always reply the image fed to it is the real one. This process makes the GAN model generate samples close to real. The formulation is below.
 
-#### Authors
-Jun-Yan Zhu, Richard Zhang, Deepak Pathak, Trevor Darrell, Alexei A. Efros, Oliver Wang, Eli Shechtman
+<p align="center">
+    <img src="../../../reports/figures/formula.jpeg" width="800"\>
+</p>
 
-#### Abstract
-Many image-to-image translation problems are ambiguous, as a single input image may correspond to multiple possible outputs. In this work, we aim to model a \emph{distribution} of possible outputs in a conditional generative modeling setting. The ambiguity of the mapping is distilled in a low-dimensional latent vector, which can be randomly sampled at test time. A generator learns to map the given input, combined with this latent code, to the output. We explicitly encourage the connection between output and the latent code to be invertible. This helps prevent a many-to-one mapping from the latent code to the output during training, also known as the problem of mode collapse, and produces more diverse results. We explore several variants of this approach by employing different training objectives, network architectures, and methods of injecting the latent code. Our proposed method encourages bijective consistency between the latent encoding and output modes. We present a systematic comparison of our method and other variants on both perceptual realism and diversity.
+In this work we modify the model input, so it is fed with four input channels instead of three (defined as ’keypoints’). BiCycle GAN consists of two main parts, that have their objective functions:
+* Conditional Variational Autoencoder GAN: cVAE-GAN
+* Conditional Latent Regressor GAN: cLR-GAN
+
+#### Conditional Variational Autoencoder GAN: cVAE-GAN
+Conditional VAE-GAN architecture is shown below. With the encoder architecture `E` the ground truth `B` is mapped to `z` latent code. After that the generator is fed with the latent code and the paired input `image A` with its additional `channel of keypoints` of the body detected to create `Bˆ`.
+
+<p align="center">
+    <img src="../../../reports/figures/cVAE-GAN.jpeg" width="800"\>
+</p>
+
+#### Conditional Latent Regressor GAN: cLR-GAN
+Conditional LR-GAN architecture visualised below. This architecture takes randomly drawn latent code `z` and attempt to recover it with `zˆ = E(G(A, keypoints, z))`. In this architecture the encoder `E` responsible for the point estimate for `zˆ`.
+
+<p align="center">
+    <img src="../../../reports/figures/cLR-GAN.jpeg" width="800"\>
+</p>
+
+##### Hybrid Model: BicycleGAN
+BiCycle GAN is the combination of cVAE-GAN and cLR-GAN objectives in a hybrid model. The architecture of modified model with the addition of input channel.
+
+<p align="center">
+    <img src="../../../reports/figures/biCycle.jpeg" width="800"\>
+</p>
+
+### Links
 
 [[Paper]](https://arxiv.org/abs/1711.11586) [[Code]](implementations/bicyclegan/bicyclegan.py)
 
-<p align="center">
-    <img src="assets/bicyclegan_architecture.jpg" width="800"\>
-</p>
+### Authors
+Jun-Yan Zhu, Richard Zhang, Deepak Pathak, Trevor Darrell, Alexei A. Efros, Oliver Wang, Eli Shechtman
 
-#### Run Example
-##### Download the data and train a model
+## Run Example
+### Download the data and train a model
 Data downloaded is not cropped and is in the highest quality possible. For 
 BiCycle GAN code `ImageDataset` class methods in `datasets.py` / 
 `datasets_on_real_images.py` / `datasets_on_skeletons.py` crops the images 
-according to the bounding boxes. 
+according to the bounding boxes.
+
+Download and unzip the data:
+
+```bash
+cd ./src/models/PyTorch-GAN/data/
+wget https://drive.google.com/file/d/11vFxG-59UzPP-L_FC4gWweoW5-NIxJxg/view?usp=sharing ./
+unzip ./dance2energy.zip -d ./
 ```
-$ cd ./src/models/PyTorch-GAN/data/
-$ wget https://drive.google.com/file/d/11vFxG-59UzPP-L_FC4gWweoW5-NIxJxg/view?usp=sharing
-$ unzip ./dance2energy.zip -d ./
-$ cd ../implementations/bicyclegan/
-$ python3 bicyclegan.py
+
+Examples of pairs given as an input to BiCycle GAN from the dataset ’dance2energy’:
+
+<p align="center">
+    <img src="../../../reports/figures/examples_of_pairs.jpeg" width="500"\>
+</p>
+
+Examples of pairs of the frames of same video given as an input to BiCycle GAN from the dataset ’dance2energy’.
+
+<p align="center">
+    <img src="../../../reports/figures/examples_same_images.jpeg" width="500"\>
+</p>
+
+Train BiCycle GAN on the dataset downloaded:
+
+```bash
+cd ../implementations/bicyclegan/
+python3 bicyclegan.py
 ```
-##### See the results
-If you wish to train a model on the datasets that 
+
+### Results 
 After the run, you will see the results in 
 `./src/models/PyTorch-GAN/implementations/images` directory.
 
-<p align="center">
-    <img src="assets/bicyclegan.png" width="480"\>
-</p>
-<p align="center">
-    Various style translations by varying the latent code.
-</p>
+### Experiments
+In the results we have the first column being an original image and the other eight columns being different trials of energy flow images generation.
+
+#### Original frame 2 Energy flow
+Experiments with set up: 
+* Size = 128x128, latentdim = 256, batchsize = 8, numepochs = 200
+    <p align="center">
+        <img src="../../../reports/figures/128-biCycle.jpeg" width="500"\>
+    </p>
+* Size = 256x256, latent dim = 1024, batch size = 8, num epochs = 200
+    <p align="center">
+        <img src="../../../reports/figures/256-biCycle.jpeg" width="500"\>
+    </p>
+
+#### Frame skeleton 2 Energy flow
+Experiments with set up: 
+* Size = 128x128, latentdim = 256, batchsize = 8, numepochs = 200
+    <p align="center">
+        <img src="../../../reports/figures/128-skeleton-biCycle.jpeg" width="500"\>
+    </p>
+* Size = 256x256, latent dim = 1024, batch size = 8, num epochs = 600
+    <p align="center">
+        <img src="../../../reports/figures/256-skeleton-biCycle.jpeg" width="500"\>
+    </p>
+  
+### Results summary
+According to the analysis of the work done, we investigated the Image-to-Image translation problem on images of real life and abstract generated images. We have noticed that if we take a pair of complex images as an input, we need more epochs for a model to learn the patterns of the desired outputs. If the size of images is 256, the pattern of energy flow is learned much better for complex ’dance2energy’ and easier ’danceSkeleton2energy’. The other side of Image-to-Image translation models is the mode collapse problem; BiCycle GAN aims to avoid this problem with the offered architecture. However, what we have noticed is that the network is prone to have a mode collapse, only working in smaller latent space; with the smaller size of image inputs, the model performs better results.

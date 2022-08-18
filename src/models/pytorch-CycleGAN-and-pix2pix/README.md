@@ -1,45 +1,58 @@
-
-<img src='imgs/horse2zebra.gif' align="right" width=384>
-
-<br><br><br>
-
 # CycleGAN in PyTorch
+<p align="center">
+  <img src="https://junyanz.github.io/CycleGAN/images/teaser_high_res.jpg" width="800"/>
+</p>
 
-This PyTorch implementation produces results comparable to or better than our original Torch software. If you would like to reproduce the same results as in the papers, check out the original [CycleGAN Torch](https://github.com/junyanz/CycleGAN) code in Lua/Torch.
+## Table of Contents
++ [Virtual environment setup](#virtual-environment-setup)
++ [Cycle GAN](#cyclegan)
+  + [Abstract](#abstract)
+  + [Links](#links)
+  + [Authors](#authors)
++ [Run example](#run-example)
+  + [Prerequisites](#prerequisites)
+  + [Installation](#installation)
+  + [Cycle GAN tran and test](#cyclegan-train-and-test)
+    + [Download the datasets](#download-the-datsets)
+    + [Train a model](#train-a-model)
+    + [Apply a pre-trained model](#apply-a-pre-trained-model)
+    + [Test the model](#test-the-model)
+  + [Results](#results)
+  + [Experiments](#ex)
++ [Results summary](#results-summary)
 
+## Cycle GAN
+### Abstract
+This PyTorch implementation produces results comparable to or better than our original Torch software. If you would like to reproduce the same results as in the papers, check out the original [CycleGAN Torch](https://github.com/junyanz/CycleGAN) code.
+
+### Links
+[[Project]](https://junyanz.github.io/CycleGAN/) 
+[[Paper]](https://arxiv.org/pdf/1703.10593.pdf)
+[[Torch]](https://github.com/junyanz/CycleGAN)
+[[Tensorflow Core Tutorial]](https://www.tensorflow.org/tutorials/generative/cyclegan)
+[[PyTorch Colab]](https://colab.research.google.com/github/junyanz/pytorch-CycleGAN-and-pix2pix/blob/master/CycleGAN.ipynb)
+
+### Authors
 The code was written by [Jun-Yan Zhu](https://github.com/junyanz) and [Taesung Park](https://github.com/taesungp), and supported by [Tongzhou Wang](https://github.com/SsnL).
 
+Harry Yang, Archit Rathore, Van Huy, Xiaowei Hu, Zhenliang He, luoxier, zsdonghao, Yanghua Jin, yunjey, tjwei, Simon Karlsson, Ldpe2G.
+
+## Run example
 **Note**: The current software works well with PyTorch 1.4. Check out the older [branch](https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix/tree/pytorch0.3.1) that supports PyTorch 0.1-0.3.
 
-**CycleGAN: [Project](https://junyanz.github.io/CycleGAN/) |  [Paper](https://arxiv.org/pdf/1703.10593.pdf) |  [Torch](https://github.com/junyanz/CycleGAN) |
-[Tensorflow Core Tutorial](https://www.tensorflow.org/tutorials/generative/cyclegan) | [PyTorch Colab](https://colab.research.google.com/github/junyanz/pytorch-CycleGAN-and-pix2pix/blob/master/CycleGAN.ipynb)**
-
-<img src="https://junyanz.github.io/CycleGAN/images/teaser_high_res.jpg" width="800"/>
-
-<hr>
-
-Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks.<br>
-[Jun-Yan Zhu](https://www.cs.cmu.edu/~junyanz/)\*,  [Taesung Park](https://taesung.me/)\*, [Phillip Isola](https://people.eecs.berkeley.edu/~isola/), [Alexei A. Efros](https://people.eecs.berkeley.edu/~efros). In ICCV 2017. (* equal contributions) [[Bibtex]](https://junyanz.github.io/CycleGAN/CycleGAN.txt)
-
-
-Image-to-Image Translation with Conditional Adversarial Networks.<br>
-[Phillip Isola](https://people.eecs.berkeley.edu/~isola), [Jun-Yan Zhu](https://www.cs.cmu.edu/~junyanz/), [Tinghui Zhou](https://people.eecs.berkeley.edu/~tinghuiz), [Alexei A. Efros](https://people.eecs.berkeley.edu/~efros). In CVPR 2017. [[Bibtex]](https://www.cs.cmu.edu/~junyanz/projects/pix2pix/pix2pix.bib)
-
-## Prerequisites
+### Prerequisites
 - Linux or macOS
 - Python 3
 - CPU or NVIDIA GPU + CUDA CuDNN
 
-## Getting Started
 ### Installation
-
-- After cloning the whole repository install the requirements 
-
+- After cloning the whole repository install the requirements
 - Install [PyTorch](http://pytorch.org) and 0.4+ and other dependencies (e.g., torchvision, [visdom](https://github.com/facebookresearch/visdom) and [dominate](https://github.com/Knio/dominate)).
   - For pip users, please type the command `pip install -r requirements.txt`.
   - For Conda users, you can create a new Conda environment using `conda env create -f environment.yml`.
 
-### CycleGAN train/test
+### CycleGAN train and test
+#### Download the datasets
 - Download a CycleGAN dataset (e.g. `dance2energy128` & `dance2energy256`):
   - Download dataset of images in size 128 pixels
   ```bash
@@ -56,7 +69,7 @@ Image-to-Image Translation with Conditional Adversarial Networks.<br>
 - To view training results and loss plots, run `python -m visdom.server` and click the URL http://localhost:8097.
 - To log training progress and test images to W&B dashboard, set the `--use_wandb` flag with train and test script
 
-### Train a model:
+#### Train a model
   - Test the model (dataset 128 px):
     ```bash
     #!./scripts/test_cyclegan.sh
@@ -71,7 +84,7 @@ Image-to-Image Translation with Conditional Adversarial Networks.<br>
     ```
     - The test results will be saved to a html file here: `./results/dance2energy_cyclegan256/latest_test/index.html`.
     
-### Apply a pre-trained model (CycleGAN)
+#### Apply a pre-trained model
 You can download a pretrained model (e.g. dance2energy) with the following script:
 - Model for images input in size of 128px: 
     ```bash
@@ -88,6 +101,7 @@ You can download a pretrained model (e.g. dance2energy) with the following scrip
     ```
 - The pretrained model is saved at `./checkpoints/dance2energy_cyclegan/latest_net_G.pth`.
 
+#### Test the model
 - To test the model, you also need to download the dance2energy dataset:
   - Download (dataset 128 px)
     ```bash
@@ -124,6 +138,16 @@ pix_dataset.sh facades
 
 - If you would like to apply a pre-trained model to a collection of input images (rather than image pairs), please use `--model test` option. See `./scripts/test_single.sh` for how to apply a model to Facade label maps (stored in the directory `facades/testB`).
 
+### Results
+After the run, you will see the results in
+`./results/dance2energy_cyclegan/test_latest/images`
+directory.
+
+### Experiments
+
+## Results summary
+According to the analysis of the work done, we investigated the Image-to-Image translation problem on images of real life and abstract generated images. We have noticed that if we take a pair of complex images as an input, we need more epochs for a model to learn the patterns of the desired outputs. If the size of images is 256, the pattern of energy flow is learned much better for complex ’dance2energy’ and easier ’danceSkeleton2energy’. The other side of Image-to-Image translation models is the mode collapse problem; BiCycle GAN aims to avoid this problem with the offered architecture. However, what we have noticed is that the network is prone to have a mode collapse, only working in smaller latent space; with the smaller size of image inputs, the model performs better results.
+
 ## Citation
 ```
 @inproceedings{CycleGAN2017,
@@ -141,13 +165,3 @@ pix_dataset.sh facades
   year={2017}
 }
 ```
-
-## Related Projects
-**[contrastive-unpaired-translation](https://github.com/taesungp/contrastive-unpaired-translation) (CUT)**<br>
-**[CycleGAN-Torch](https://github.com/junyanz/CycleGAN) |
-[pix2pix-Torch](https://github.com/phillipi/pix2pix) | [pix2pixHD](https://github.com/NVIDIA/pix2pixHD)|
-[BicycleGAN](https://github.com/junyanz/BicycleGAN) | [vid2vid](https://tcwang0509.github.io/vid2vid/) | [SPADE/GauGAN](https://github.com/NVlabs/SPADE)**<br>
-**[iGAN](https://github.com/junyanz/iGAN) | [GAN Dissection](https://github.com/CSAILVision/GANDissect) | [GAN Paint](http://ganpaint.io/)**
-
-## Acknowledgments
-Our code is inspired by [pytorch-DCGAN](https://github.com/pytorch/examples/tree/master/dcgan).

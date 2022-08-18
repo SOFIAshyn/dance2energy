@@ -4,7 +4,7 @@
 Idea & development: [Sofiia Petryshyn](https://github.com/SOFIAshyn). 
 Supervisors: 
 [Lyubomyr Senyuk]() and 
-[Roman Vey]().
+[Roman Vey](https://github.com/romanvey).
 
 Dance2Energy is a project that shows the usage of
 AlphaPose ML model and represents the idea of 
@@ -33,13 +33,12 @@ generation with Cycle GAN image-to-image translation.
 **Press on the image to follow the demo video in YouTube:**
 [![Cycle GAN performance](https://img.youtube.com/vi/ZpkNwWG8qWo/0.jpg)](https://www.youtube.com/watch?v=ZpkNwWG8qWo)
 
-## Prerequisites
-- Linux or macOS
-- Python 3
-- CPU or NVIDIA GPU + CUDA CuDNN
-
 ## Table of Contents
+  * [Abstract](#abstract)
+    * [Authors](#authors)
+    * [Links](#links)
   * [Installation](#installation)
+    * [Prerequisites](#prerequisites)
   * [Implementation from scratch](#run-the-project-from-skratch)
     + [Data processing](#data-processing)
     + [Implementation from scratch](#implementation-from-scratch)
@@ -57,7 +56,19 @@ generation with Cycle GAN image-to-image translation.
   + [Future work](#future-work)
   + [Citation](#citation)
 
+# Abstract
+## Authors
+Sofiia Petryshyn, support by Lyubomyr Senyuk and Roman Vey.
+
+## Links
+TODO: provide all the links
+
 # Installation
+## Prerequisites
+- Linux or macOS
+- Python 3
+- CPU or NVIDIA GPU + CUDA CuDNN
+
 - Clone the repository:
    ```bash
    git clone https://github.com/SOFIAshyn/dance2energy.git

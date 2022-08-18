@@ -19,10 +19,10 @@
       + [Frame skeleton 2 Energy flow](#frame-skeleton-2-energy-flow)
 
 ## Virtual environment setup
-    ```bash
-    cd ./src/PyTorch-GAN/
-    pip3 install -r requirements.txt
-    ```
+```bash
+cd ./src/PyTorch-GAN/
+pip3 install -r requirements.txt
+```
 
 ## BicycleGAN
 ### Abstract
@@ -65,11 +65,16 @@ BiCycle GAN is the combination of cVAE-GAN and cLR-GAN objectives in a hybrid mo
 Jun-Yan Zhu, Richard Zhang, Deepak Pathak, Trevor Darrell, Alexei A. Efros, Oliver Wang, Eli Shechtman
 
 ## Run Example
-### Download the data and train a model
+### Download the data
 Data downloaded is not cropped and is in the highest quality possible. For 
 BiCycle GAN code `ImageDataset` class methods in `datasets.py` / 
 `datasets_on_real_images.py` / `datasets_on_skeletons.py` crops the images 
 according to the bounding boxes.
+
+Install the requirements:
+```bash
+pip3 install -r requirements.txt.
+```
 
 Download and unzip the data:
 
@@ -91,12 +96,14 @@ Examples of pairs of the frames of same video given as an input to BiCycle GAN f
     <img src="../../../reports/figures/examples_same_images.jpeg" width="500"\>
 </p>
 
+### Train a model
 Train BiCycle GAN on the dataset downloaded:
 
 ```bash
 cd ../implementations/bicyclegan/
 python3 bicyclegan.py
 ```
+The model is saved in `./implementations/bicyclegan/saved_models`. Model name is the same as the name of the dataset.
 
 ### Results 
 After the run, you will see the results in 

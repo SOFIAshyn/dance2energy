@@ -3,7 +3,7 @@
 <b>A PyTorch implementation:</b> [PyTorch-GANs](https://github.com/eriklindernoren/PyTorch-GAN)
 
 ## Table of Contents
-  * [Virtual environment setup](#virtual-environment-setup)
+  + [Virtual environment setup](#virtual-environment-setup)
   + [BicycleGAN](#bicyclegan)
     + [Abstract](#abstract)
       + [Conditional Variational Autoencoder GAN: cVAE-GAN](#conditional-variational-autoencoder-gan-cvae-gan)
@@ -64,7 +64,7 @@ BiCycle GAN is the combination of cVAE-GAN and cLR-GAN objectives in a hybrid mo
 [[Paper]](https://arxiv.org/abs/1711.11586) [[Code]](implementations/bicyclegan/bicyclegan.py)
 
 ### Authors
-Jun-Yan Zhu, Richard Zhang, Deepak Pathak, Trevor Darrell, Alexei A. Efros, Oliver Wang, Eli Shechtman
+Jun-Yan Zhu, Richard Zhang, Deepak Pathak, Trevor Darrell, Alexei A. Efros, Oliver Wang, Eli Shechtman.
 
 ## Run Example
 ### Download the data

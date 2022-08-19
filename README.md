@@ -60,7 +60,7 @@ generation with Cycle GAN image-to-image translation.
   + [Run a frame interpolation model](#run-a-frame-interpolation-model)
   + [Results summary](#results-summary)
   + [Future work](#future-work)
-  + [Philosophical idea]()
+  + [Philosophical idea](#philosophical-idea)
   + [Citation](#citation)
 
 # Abstract

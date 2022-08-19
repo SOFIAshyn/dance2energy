@@ -68,7 +68,7 @@ generation with Cycle GAN image-to-image translation.
 Sofiia Petryshyn, support by Lyubomyr Senyuk and Roman Vey.
 
 ## Links
-[[Paper]]()
+[[Paper]](https://drive.google.com/file/d/1lHHhskLZcy18ZJZgXqsKfplXP65l320F/view?usp=sharing)
 [[Presentation]](https://docs.google.com/presentation/d/16NTiU2i1V95RL4OUrgdiuq0RDwYA9fPu8tz0HFZ0UK4/edit?usp=sharing)
 [[Article: Generative Arts]]()
 [[Article: Dance GAN. Technical Explanation]]()

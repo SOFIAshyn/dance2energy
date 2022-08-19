@@ -60,6 +60,10 @@ generation with Cycle GAN image-to-image translation.
 ## Authors
 Sofiia Petryshyn, support by Lyubomyr Senyuk and Roman Vey.
 
+The project was done as a Thesis for BSc in Computer Science 
+in [Ukrainian Catholic University](https://ucu.edu.ua/en/) for [Applied Sciences Faculty](https://apps.ucu.edu.ua/en/faculty/study/cs-ucu-edu-ua/), 
+also as an RnD project at [Avenga](https://www.avenga.com/).
+
 ## Links
 [[Paper]]()
 [[Presentation]](https://docs.google.com/presentation/d/16NTiU2i1V95RL4OUrgdiuq0RDwYA9fPu8tz0HFZ0UK4/edit?usp=sharing)

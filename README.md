@@ -3,7 +3,7 @@
 **Authors:**
 Idea & development: [Sofiia Petryshyn](https://github.com/SOFIAshyn). 
 Supervisors: 
-[Lyubomyr Senyuk]() and 
+[Lyubomyr Senyuk](https://www.linkedin.com/in/lyubomyr-sam-senyuk/) and 
 [Roman Vey](https://github.com/romanvey).
 
 The project was done as a Thesis for BSc in Computer Science 

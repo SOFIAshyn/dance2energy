@@ -6,6 +6,12 @@ Supervisors:
 [Lyubomyr Senyuk]() and 
 [Roman Vey](https://github.com/romanvey).
 
+The project was done as a Thesis for BSc in Computer Science 
+in [Ukrainian Catholic University](https://ucu.edu.ua/en/) for [Applied Sciences Faculty](https://apps.ucu.edu.ua/en/faculty/study/cs-ucu-edu-ua/), 
+also as an RnD project at [Avenga](https://www.avenga.com/).
+
+**Main idea:**
+
 Dance2Energy is a project that shows the usage of
 AlphaPose ML model and represents the idea of 
 Generative Art in two senses: algorithmic & intellectual.
@@ -59,10 +65,6 @@ generation with Cycle GAN image-to-image translation.
 # Abstract
 ## Authors
 Sofiia Petryshyn, support by Lyubomyr Senyuk and Roman Vey.
-
-The project was done as a Thesis for BSc in Computer Science 
-in [Ukrainian Catholic University](https://ucu.edu.ua/en/) for [Applied Sciences Faculty](https://apps.ucu.edu.ua/en/faculty/study/cs-ucu-edu-ua/), 
-also as an RnD project at [Avenga](https://www.avenga.com/).
 
 ## Links
 [[Paper]]()

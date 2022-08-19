@@ -61,7 +61,12 @@ generation with Cycle GAN image-to-image translation.
 Sofiia Petryshyn, support by Lyubomyr Senyuk and Roman Vey.
 
 ## Links
-TODO: provide all the links
+[[Paper]]()
+[[Presentation]](https://docs.google.com/presentation/d/16NTiU2i1V95RL4OUrgdiuq0RDwYA9fPu8tz0HFZ0UK4/edit?usp=sharing)
+[[Article: Generative Arts]]()
+[[Article: Dance GAN. Technical Explanation]]()
+[[YouTube: Algoritmic Dance GAN]](https://youtu.be/EjVb_VMo0ns)
+[[YouTube: Intellectual Cycle Dance GAN]](https://youtu.be/ZpkNwWG8qWo)
 
 # Installation
 ## Prerequisites
@@ -168,6 +173,11 @@ An example of the generated abstraction visuals can be seen below:
 <p align="center">
     <img src='./reports/figures/orXab.jpeg' width="700">
 </p>
+
+Here you can see the video of the abstractions generated according to the algorithm described above, and merged together with FILM interpolation technique (click on the image):
+
+[![Algoritmic Art performance](https://img.youtube.com/vi/EjVb_VMo0ns/0.jpg)](https://www.youtube.com/watch?v=EjVb_VMo0ns)
+
 
 # Train or use pre-trained GAN models
 

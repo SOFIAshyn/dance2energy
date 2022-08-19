@@ -60,6 +60,7 @@ generation with Cycle GAN image-to-image translation.
   + [Run a frame interpolation model](#run-a-frame-interpolation-model)
   + [Results summary](#results-summary)
   + [Future work](#future-work)
+  + [Philosophical idea]()
   + [Citation](#citation)
 
 # Abstract
@@ -230,6 +231,17 @@ According to the analysis of the work done, we investigated the Image-to-Image t
 To improve results, we need to make changes in architecture; another loss or dis- criminator type doesn’t make a real change. Further steps to explore:
 * work with larger datasets 
 * try to use larger sizes of images to feed BiCycle GAN and avoid mode collapse • progress with project to be able to generate the visuals in live.
+
+# Philosophical idea
+Having a trend of graphical arts, sports, and mindfulness, we decided to show hu- manity the energy flow that they express. The demonstration of the energy flow is the picture that shows the trajectories of a person’s limb movements.
+
+The idea is to represent philosophical views through the prism of technological progress. To reach this aim, we decided to use generative networks that have become very widespread over the last years.
+
+Generative art refers to the creation of art through the use of an autonomous system, so in order to show body impulses, this technology is the best choice.
+
+The energy that person generates while dancing can be either very active or quite stiff. The flow depends on the amplitude and speed of movements. The demonstra- tion of energy can use a lot of different forms, however, we decided to represent it as a cobweb that shares a pattern in the trajectory of limbs.
+
+Since movement can be related to thoughts and feelings, dancing can bring changes to emotions and attitudes almost instantly. Dance therapy with visual observation can succeed a new level of understanding of how one feels like and why they feel this way. It helps live life more consciously, happily, and be more fulfilled.
 
 # Citation
 ```bash

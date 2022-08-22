@@ -70,7 +70,7 @@ Sofiia Petryshyn, support by Lyubomyr Senyuk and Roman Vey.
 ## Links
 [[Paper]](https://drive.google.com/file/d/1lHHhskLZcy18ZJZgXqsKfplXP65l320F/view?usp=sharing)
 [[Presentation]](https://docs.google.com/presentation/d/16NTiU2i1V95RL4OUrgdiuq0RDwYA9fPu8tz0HFZ0UK4/edit?usp=sharing)
-[[Article: Generative Arts]]()
+[[Article: Generative Arts]](https://drive.google.com/file/d/1OKY3KrWRMVCV_Wdhroq5s3CHu-mLL3El/view?usp=sharing)
 [[Article: Dance GAN. Technical Explanation]]()
 [[YouTube: Algoritmic Dance GAN]](https://youtu.be/EjVb_VMo0ns)
 [[YouTube: Intellectual Cycle Dance GAN]](https://youtu.be/ZpkNwWG8qWo)
